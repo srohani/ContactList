@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
         
         
         InputCollector *input = [[InputCollector alloc] init];
-        Contact *contactPerson = [[Contact alloc] init];
+        
         ContactList *contactList = [[ContactList alloc] init];
         
         
@@ -32,6 +32,7 @@ int main(int argc, const char * argv[]) {
                 break;
             }
             if ([firstMenuChoice  isEqual: @"new"] || [firstMenuChoice  isEqual: @"1"]) {
+                Contact *contactPerson = [[Contact alloc] init];
                 contactPerson.firstName = [input inputForPrompt:@"Please enter in your first name"];
                 contactPerson.lastName = [input inputForPrompt:@"Please enter in your last name"];
                 contactPerson.email = [input inputForPrompt:@"Please enter in your email"];
@@ -39,11 +40,21 @@ int main(int argc, const char * argv[]) {
                 [contactList addContact:contactPerson];
                 
             }
+            if ([firstMenuChoice isEqual:@"2"] || [firstMenuChoice  isEqual: @"list"]) {
+                
+                
+                NSLog(@"%@", [contactList listContacts]);
+                
+                 
+                
+                
+            }
+            
         
-            NSLog(@"This is your first menu choice %@",firstMenuChoice);
+//            NSLog(@"This is your first menu choice %@",firstMenuChoice);
             
             //will display firstname, lastname, and email because description has been changed
-            NSLog(@"%@ \n",contactPerson);
+//            NSLog(@"%@ \n",contactPerson);
 
         
         

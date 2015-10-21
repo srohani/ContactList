@@ -41,6 +41,18 @@
     
 }
 
+-(NSString *)listContacts {
+    
+    NSMutableString *contactListAsSingleString = [[NSMutableString alloc] init];
+    [contactListAsSingleString appendString:@""];
+    
+    for (Contact *contact in self.contacts) {
+        NSString *contactRow = [NSString stringWithFormat:@"%lu: %@\t%@\t%@\n",[self.contacts indexOfObject:contact],contact.firstName,contact.lastName,contact.email];
+        [contactListAsSingleString appendString:contactRow];
+    }
+    
+    return contactListAsSingleString;
+}
 
 
 

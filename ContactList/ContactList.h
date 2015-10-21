@@ -16,5 +16,8 @@
 
 -(void) addContact:(Contact *)newContact;
 
+-(NSString *)listContacts;
+
+
 
 @end
